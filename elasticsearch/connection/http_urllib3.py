@@ -67,6 +67,9 @@ class Urllib3HttpConnection(Connection):
             # the body will be decoded into unicode too and that will fail (#133).
             if not isinstance(url, str):
                 url = url.encode('utf-8')
+            # RP_67103 fix.
+            if not isinstance(method, str):
+                method = method.encode('utf-8')
 
             response = self.pool.urlopen(method, url, body, retries=False, headers=self.headers, **kw)
             duration = time.time() - start
