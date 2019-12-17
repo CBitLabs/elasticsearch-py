@@ -6,7 +6,7 @@ import os
 
 VERSION = (1, 4, 0)
 __version__ = VERSION
-__versionstr__ = '.'.join(map(str, VERSION)) + "bs1"
+__versionstr__ = '.'.join(map(str, VERSION)) + "-bs1"
 
 f = open(join(dirname(__file__), 'README'))
 long_description = f.read().strip()
